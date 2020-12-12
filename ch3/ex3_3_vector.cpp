@@ -74,6 +74,32 @@ int main(){
     for(auto v : ivec)
         cout << v << " ";
     cout << endl;
+    // 练习3.20 输出相邻整数的和；先输出第一个和最后一个元素的和,然后输入第二个和倒数第二个的和。
+    vector<int> inumbs;
+    int ival;
+    while(cin >> ival){
+        inumbs.push_back(ival);
+        if (getchar() == '\n')  break;
+    }
+    cout << "Current values of vector are:"<< endl;
+    for(auto v : inumbs)
+        cout << v << " ";
+    cout << endl;
+
+    cout << "add pairs of  elements in vector are:"<< endl;
+    for(decltype(inumbs.size()) index = 0;
+        index < inumbs.size(); ++ index){
+        cout << inumbs[index] +inumbs[index+1] << " ";
+    }
+    cout << endl;
+
+    cout << "add the heads with tails are:"<< endl;
+    for(decltype(inumbs.size()) index = 0;
+        index < inumbs.size()/2; ++ index){
+        cout << inumbs[index] +inumbs[inumbs.size()-index-1] << " ";
+
+    }
+    cout << endl;
 
     return 0;
 }
