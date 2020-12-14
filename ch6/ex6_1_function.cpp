@@ -55,6 +55,14 @@ int i2fact (){
     return rect;
 }
 
+// 练习6.10 使用指针形参交换两个整数的值
+void changeValue (int *ia, int *ib){
+    int temp;
+    temp = *ia;
+    *ia = *ib;
+    *ib = temp;
+}
+
 int main(){
     cout << f() << endl;
     f2(10);
@@ -62,5 +70,13 @@ int main(){
     cout << fact(10) << endl;
     cout << i2fact() << endl;
 
+    // 练习6.10 使用指针形参交换两个整数的值
+    int ia = 10, ib =1;
+
+    cout << "ia = " << ia << " " << "ib = " << ib << endl;
+    changeValue(&ia, &ib);
+    cout << "after calling changeValue function: " << endl;
+    cout << "ia = " << ia << " " << "ib = " << ib << endl;
+    
     return 0;
 }
