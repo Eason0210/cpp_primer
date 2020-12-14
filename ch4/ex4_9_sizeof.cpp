@@ -21,5 +21,14 @@ int main(){
     cout << "size of *p " << sizeof(*p) << endl;
     cout << sizeof(x)/sizeof(*x) << endl;
     cout << sizeof(p)/sizeof(*p) << endl;
+
+    // 练习5.3 使用逗号运算符改写 while 循环为 for 循环
+    // 观察可读性是提高了，还好是降低了。
+    int sum = 0;
+
+    for(int i = 1; i != 11; ++i)
+        sum += i;
+    cout << "sum of 1 .. 9 = " << sum << endl;
+
     return 0;
 }
