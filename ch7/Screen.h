@@ -1,6 +1,7 @@
 #include <string>
 
 class Screen {
+    friend class Window_mgr;
 public :
     using pos = std::string::size_type;
     Screen() = default;
@@ -20,9 +21,11 @@ public :
     // 根据对象是否是 Const 重载了 display 函数
     Screen &display(std::ostream &os)
         { do_display(os); return *this; }
-   const Screen &display(std::ostream &os) const
+    const Screen &display(std::ostream &os) const
         { do_display(os); return *this; }
 
+    // 练习7.33 添加size 成员
+    pos size() const;
 
 private:
     pos cursor = 0;
@@ -59,4 +62,11 @@ inline Screen &Screen::set(char c){
 inline Screen &Screen::set(pos r, pos col, char ch){
     contents[r*width + col] = ch;
     return *this;
+}
+
+
+// 练习7.33 添加 size 成员
+Screen::pos
+Screen::size() const{
+    return height * width;
 }

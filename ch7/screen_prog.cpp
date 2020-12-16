@@ -9,5 +9,8 @@ int main(){
     cout << "\n";
     myScreen.display(cout);
     cout << "\n";
+
+    cout << "The size of myScreen is: " << myScreen.size() << endl;
+
     return 0;
 }
