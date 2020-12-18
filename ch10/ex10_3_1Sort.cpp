@@ -4,7 +4,11 @@
 #include <algorithm>
 #include <numeric>
 
-using namespace std;
+using std::cout;using std::endl;
+using std::string;
+using std::vector;
+using std::sort;using std::stable_sort;
+
 
 // Declare of function
 void elimDups(vector<string>&);
