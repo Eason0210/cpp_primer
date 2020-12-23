@@ -28,6 +28,8 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs){
 int main(int argc, char* argv[]){
     ifstream input(argv[1]);
     ofstream output(argv[2]);
+    // append 模式，将会把输入文件追加到文件末尾
+    // ofstream output(argv[2],ofstream::app);
     Sales_data total;
     if (read (input, total)){
         Sales_data trans;
